@@ -1,72 +1,131 @@
 :root {
-    --bg: #0b1020;
-    --card: #141b2f;
-    --card-hover: #1d2845;
+    --bg: #070b18;
+    --bg-2: #0b1020;
+    --card: rgba(16, 24, 43, 0.88);
+    --card-2: rgba(20, 32, 58, 0.92);
     --primary: #00e5ff;
-    --secondary: #00b8d4;
     --success: #00ff88;
     --danger: #ff4d6d;
     --warning: #ffc107;
-    --text: #ffffff;
-    --muted: #9ca3af;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: rgba(0, 229, 255, 0.28);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background:
-        radial-gradient(circle at top, #172554, transparent 35%),
-        var(--bg);
-    color: var(--text);
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(0, 229, 255, .18), transparent 30%),
+        radial-gradient(circle at top right, rgba(0, 255, 136, .10), transparent 28%),
+        linear-gradient(135deg, var(--bg), var(--bg-2));
 }
 
-h1 {
-    color: var(--primary);
-    text-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
-    font-weight: 800;
+.container {
+    max-width: 1180px;
 }
 
-h2 {
+header h1 {
     color: var(--primary);
-    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 0 22px rgba(0, 229, 255, .65);
+}
+
+header p {
+    color: var(--muted) !important;
+}
+
+.navbar-iot {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 14px;
+    background: rgba(7, 11, 24, .55);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(0, 229, 255, .08);
+}
+
+.nav-iot {
+    text-decoration: none;
+    color: var(--text);
+    padding: 12px 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 229, 255, .25);
+    background: rgba(15, 23, 42, .8);
+    font-weight: 700;
+    transition: .25s;
+}
+
+.nav-iot:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(0, 229, 255, .38);
 }
 
 .iot-card,
 .iot-panel {
-    background: rgba(20, 27, 47, 0.92);
-    border: 1px solid rgba(0, 229, 255, 0.25);
-    border-radius: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 26px;
     padding: 24px;
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
+    box-shadow:
+        0 0 35px rgba(0, 229, 255, .09),
+        inset 0 0 18px rgba(255, 255, 255, .025);
+    backdrop-filter: blur(14px);
+}
+
+.iot-card {
+    min-height: 130px;
+    transition: .25s;
+}
+
+.iot-card:hover {
+    transform: translateY(-4px);
+    background: var(--card-2);
+    box-shadow: 0 0 34px rgba(0, 229, 255, .18);
 }
 
 .iot-card span {
+    display: block;
     color: var(--muted);
-    font-size: 14px;
+    font-size: .9rem;
+    margin-bottom: 8px;
 }
 
 .iot-card h3 {
-    margin-top: 10px;
-    font-size: 24px;
+    font-size: 1.55rem;
+    font-weight: 800;
 }
 
 .online {
     color: var(--success);
-    text-shadow: 0 0 14px rgba(0, 255, 136, 0.7);
+    text-shadow: 0 0 14px rgba(0, 255, 136, .75);
+}
+
+h2 {
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 22px;
 }
 
 .control-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
-    max-width: 800px;
+    max-width: 760px;
     margin: auto;
 }
 
-.forward {
-    grid-column: 2;
-}
-
+.forward,
 .back {
     grid-column: 2;
 }
@@ -75,27 +134,39 @@ h2 {
 .btn-special,
 .btn-demo {
     border: none;
-    border-radius: 18px;
-    padding: 18px;
+    border-radius: 20px;
+    padding: 18px 20px;
     color: var(--text);
-    background: linear-gradient(145deg, #111827, #1d2845);
-    border: 1px solid rgba(0, 229, 255, 0.4);
-    box-shadow: 0 0 16px rgba(0, 229, 255, 0.15);
-    transition: 0.2s;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: .3px;
+    background:
+        linear-gradient(145deg, rgba(15, 23, 42, .95), rgba(30, 41, 71, .95));
+    border: 1px solid rgba(0, 229, 255, .38);
+    box-shadow:
+        0 0 18px rgba(0, 229, 255, .15),
+        inset 0 0 14px rgba(255, 255, 255, .025);
+    transition: .2s;
 }
 
 .btn-control:hover,
 .btn-special:hover,
 .btn-demo:hover {
-    background: var(--card-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.45);
+    transform: translateY(-3px) scale(1.02);
+    color: var(--primary);
+    box-shadow:
+        0 0 30px rgba(0, 229, 255, .45),
+        inset 0 0 18px rgba(0, 229, 255, .08);
 }
 
 .stop {
-    border-color: var(--danger);
-    box-shadow: 0 0 18px rgba(255, 77, 109, 0.3);
+    border-color: rgba(255, 77, 109, .6);
+    color: #ffd6de;
+    box-shadow: 0 0 18px rgba(255, 77, 109, .25);
+}
+
+.stop:hover {
+    color: var(--danger);
+    box-shadow: 0 0 30px rgba(255, 77, 109, .45);
 }
 
 .special-grid {
@@ -105,13 +176,31 @@ h2 {
 }
 
 .btn-demo {
-    background: linear-gradient(145deg, #004d61, #008ea8);
+    background: linear-gradient(145deg, #00485a, #007f95);
+}
+
+.form-select,
+.form-control,
+.input-iot {
+    background: rgba(7, 11, 24, .92) !important;
+    color: white !important;
+    border: 1px solid rgba(0, 229, 255, .38) !important;
+    border-radius: 16px !important;
+    padding: 12px 14px !important;
+}
+
+.form-select:focus,
+.form-control:focus,
+.input-iot:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 18px rgba(0, 229, 255, .32) !important;
 }
 
 .mensaje {
-    min-height: 28px;
+    min-height: 32px;
     text-align: center;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: .4px;
 }
 
 .mensaje.success {
@@ -130,10 +219,43 @@ h2 {
     color: var(--danger);
 }
 
-.form-select {
-    background-color: #111827;
-    color: white;
-    border: 1px solid rgba(0, 229, 255, 0.4);
+.demo-item,
+.demo-mov-card,
+.param-card {
+    background: rgba(15, 23, 42, .86);
+    border: 1px solid rgba(0, 229, 255, .28);
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow: 0 0 22px rgba(0, 229, 255, .08);
+}
+
+.demo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.demo-item h4 {
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.demo-item p {
+    color: var(--muted);
+    margin: 0;
+}
+
+.demo-list {
+    display: grid;
+    gap: 18px;
+}
+
+label {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
@@ -145,5 +267,120 @@ h2 {
     .forward,
     .back {
         grid-column: auto;
+    }
+
+    .demo-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .iot-card {
+        min-height: auto;
+    }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 229, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, .035) 1px, transparent 1px);
+    background-size: 42px 42px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    right: -140px;
+    bottom: -140px;
+    background: radial-gradient(circle, rgba(0, 229, 255, .18), transparent 65%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.iot-panel {
+    position: relative;
+    overflow: hidden;
+}
+
+.iot-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: .8;
+}
+
+.iot-card::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 3px;
+    margin-top: 14px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--success));
+    box-shadow: 0 0 12px rgba(0, 229, 255, .8);
+}
+
+.btn-control:active,
+.btn-special:active,
+.btn-demo:active {
+    transform: scale(.97);
+}
+
+.footer-iot {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 28px;
+    border-radius: 26px;
+    background: rgba(7, 11, 24, .72);
+    border: 1px solid rgba(0, 229, 255, .28);
+    box-shadow: 0 0 32px rgba(0, 229, 255, .10);
+    backdrop-filter: blur(14px);
+}
+
+.footer-iot h4 {
+    color: var(--primary);
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-shadow: 0 0 14px rgba(0, 229, 255, .55);
+}
+
+.footer-iot p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--muted);
+}
+
+.footer-dev {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-dev span,
+.footer-dev small {
+    color: var(--muted);
+}
+
+.footer-dev strong {
+    color: var(--success);
+    font-size: 1.25rem;
+    text-shadow: 0 0 14px rgba(0, 255, 136, .45);
+}
+
+@media (max-width: 768px) {
+    .footer-dev {
+        align-items: flex-start;
     }
 }
