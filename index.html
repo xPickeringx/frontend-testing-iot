@@ -56,29 +56,85 @@
     </section>
 
     <section class="iot-panel mb-4">
-        <h2>Control Manual</h2>
+    <div class="section-header">
+        <div>
+            <h2>Control Manual</h2>
+            <p>Comandos directos al ESP8266</p>
+        </div>
 
-        <div class="control-grid">
+        <div class="control-status">
+            <span class="pulse-dot"></span>
+            Modo manual
+        </div>
+    </div>
 
-            <button onclick="ejecutarMovimiento(1)" class="btn-control forward">Adelante</button>
+    <div class="remote-wrapper">
 
-            <button onclick="ejecutarMovimiento(4)" class="btn-control">Vuelta Izq Adelante</button>
-            <button onclick="ejecutarMovimiento(3)" class="btn-control stop">Detener</button>
-            <button onclick="ejecutarMovimiento(5)" class="btn-control">Vuelta Der Adelante</button>
+        <div class="remote-core">
 
-            <button onclick="ejecutarMovimiento(6)" class="btn-control">Vuelta Izq Atrás</button>
-            <button onclick="ejecutarMovimiento(2)" class="btn-control back">Atrás</button>
-            <button onclick="ejecutarMovimiento(7)" class="btn-control">Vuelta Der Atrás</button>
+            <button onclick="ejecutarMovimiento(1)" class="remote-btn forward-btn">
+                <span class="arrow">▲</span>
+                <small>Adelante</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(4)" class="remote-btn diagonal">
+                <span>↖</span>
+                <small>Vuelta Izq</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(3)" class="remote-btn stop-btn">
+                <span>■</span>
+                <small>Detener</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(5)" class="remote-btn diagonal">
+                <span>↗</span>
+                <small>Vuelta Der</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(6)" class="remote-btn diagonal">
+                <span>↙</span>
+                <small>Atrás Izq</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(2)" class="remote-btn back-btn">
+                <span class="arrow">▼</span>
+                <small>Atrás</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(7)" class="remote-btn diagonal">
+                <span>↘</span>
+                <small>Atrás Der</small>
+            </button>
 
         </div>
 
-        <div class="special-grid mt-4">
-            <button onclick="ejecutarMovimiento(8)" class="btn-special">Giro 90° Izquierda</button>
-            <button onclick="ejecutarMovimiento(9)" class="btn-special">Giro 90° Derecha</button>
-            <button onclick="ejecutarMovimiento(10)" class="btn-special">Giro 360° Izquierda</button>
-            <button onclick="ejecutarMovimiento(11)" class="btn-special">Giro 360° Derecha</button>
+        <div class="special-controls">
+
+            <button onclick="ejecutarMovimiento(8)" class="special-control">
+                <span>⟲</span>
+                <small>90° Izquierda</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(9)" class="special-control">
+                <span>⟳</span>
+                <small>90° Derecha</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(10)" class="special-control">
+                <span>⟲</span>
+                <small>360° Izquierda</small>
+            </button>
+
+            <button onclick="ejecutarMovimiento(11)" class="special-control">
+                <span>⟳</span>
+                <small>360° Derecha</small>
+            </button>
+
         </div>
-    </section>
+
+    </div>
+</section>
 
     <section class="iot-panel">
         <h2>Demos</h2>
