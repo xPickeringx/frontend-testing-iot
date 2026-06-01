@@ -1,0 +1,32 @@
+.param-card {
+    background: rgba(17, 24, 39, 0.95);
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 0 22px rgba(0, 229, 255, 0.12);
+}
+
+.param-card label {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.param-card small {
+    color: var(--muted);
+}
+
+.param-card input {
+    background: #0b1020;
+    color: white;
+    border: 1px solid rgba(0, 229, 255, 0.45);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.param-card input:focus {
+    background: #0b1020;
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.35);
+}

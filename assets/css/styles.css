@@ -1,0 +1,149 @@
+:root {
+    --bg: #0b1020;
+    --card: #141b2f;
+    --card-hover: #1d2845;
+    --primary: #00e5ff;
+    --secondary: #00b8d4;
+    --success: #00ff88;
+    --danger: #ff4d6d;
+    --warning: #ffc107;
+    --text: #ffffff;
+    --muted: #9ca3af;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, #172554, transparent 35%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: var(--primary);
+    text-shadow: 0 0 18px rgba(0, 229, 255, 0.6);
+    font-weight: 800;
+}
+
+h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.iot-card,
+.iot-panel {
+    background: rgba(20, 27, 47, 0.92);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
+}
+
+.iot-card span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.iot-card h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.online {
+    color: var(--success);
+    text-shadow: 0 0 14px rgba(0, 255, 136, 0.7);
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.forward {
+    grid-column: 2;
+}
+
+.back {
+    grid-column: 2;
+}
+
+.btn-control,
+.btn-special,
+.btn-demo {
+    border: none;
+    border-radius: 18px;
+    padding: 18px;
+    color: var(--text);
+    background: linear-gradient(145deg, #111827, #1d2845);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.15);
+    transition: 0.2s;
+    font-weight: 700;
+}
+
+.btn-control:hover,
+.btn-special:hover,
+.btn-demo:hover {
+    background: var(--card-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.45);
+}
+
+.stop {
+    border-color: var(--danger);
+    box-shadow: 0 0 18px rgba(255, 77, 109, 0.3);
+}
+
+.special-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.btn-demo {
+    background: linear-gradient(145deg, #004d61, #008ea8);
+}
+
+.mensaje {
+    min-height: 28px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.mensaje.success {
+    color: var(--success);
+}
+
+.mensaje.info {
+    color: var(--primary);
+}
+
+.mensaje.warning {
+    color: var(--warning);
+}
+
+.mensaje.danger {
+    color: var(--danger);
+}
+
+.form-select {
+    background-color: #111827;
+    color: white;
+    border: 1px solid rgba(0, 229, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .control-grid,
+    .special-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .forward,
+    .back {
+        grid-column: auto;
+    }
+}
